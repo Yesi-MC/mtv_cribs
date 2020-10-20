@@ -1,7 +1,6 @@
 class Building
 
-  attr_reader :units,
-              :renters
+  attr_reader :units
 
   def initialize
     @units   = []
@@ -12,7 +11,9 @@ class Building
     @units << unit
   end
 
-  # def renters
-  #
-  # end
+  def renters
+    @units.map do |unit|
+     unit.renter.name
+    end
+  end
 end
